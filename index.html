@@ -323,21 +323,21 @@
       <div class="pack-tag" style="background:#2d6a35;">🎯 Mayor ahorro</div>
       <span class="pack-emoji">⚖️</span>
       <div class="pack-name">A tu medida</div>
-      <div class="pack-detail">De 10 a 70 kg · Precio más bajo por kilo</div>
+      <div class="pack-detail">De 5 a 50 kg · Precio más bajo por kilo</div>
       <div class="pack-price">$4.790 <small>/ kg</small></div>
 
       <!-- Slider de kilos -->
       <div class="pack-custom-kg">
         <label>
           Cantidad
-          <strong id="kg-display">10 kg</strong>
+          <strong id="kg-display">5 kg</strong>
         </label>
-        <input type="range" class="kg-slider" id="kg-slider" min="10" max="70" step="1" value="10"
+        <input type="range" class="kg-slider" id="kg-slider" min="5" max="50" step="1" value="5"
           oninput="updateKgSlider(this.value)" onclick="event.stopPropagation()">
       </div>
       <div class="custom-price-calc">
         <span class="cpc-label">Total estimado</span>
-        <span class="cpc-total" id="cpc-total">$47.900</span>
+        <span class="cpc-total" id="cpc-total">$23.950</span>
       </div>
 
       <ul style="margin-top:14px;">
@@ -469,7 +469,7 @@
 </footer>
 
 <script>
-  const S = { pack: null, mad: null, day: null, comuna: null, kg: 10 };
+  const S = { pack: null, mad: null, day: null, comuna: null, kg: 5 };
 
   const packLabel = {
     familiar: '🥑 Familiar (aprox. 2 kg)',
@@ -490,7 +490,7 @@
     const total = S.kg * 4790;
     document.getElementById('cpc-total').textContent = '$' + total.toLocaleString('es-CL');
     // Update slider gradient
-    const pct = ((val - 10) / (70 - 10)) * 100;
+    const pct = ((val - 5) / (50 - 5)) * 100;
     document.getElementById('kg-slider').style.background =
       `linear-gradient(to right, var(--verde-vivo) 0%, var(--verde-vivo) ${pct}%, #ddd ${pct}%, #ddd 100%)`;
     updateBar();
